@@ -1,4 +1,4 @@
-# 🌐 Full-Stack Java Projects – Projects-200
+# 🌐 Full-Stack Java Projects
 
 Welcome! This repository contains full-stack Java projects that combine powerful **Spring Boot** backends with clean, modern frontends (built using AI assistance or React templates). Each project showcases a complete solution — from frontend user interaction to backend logic and data persistence.
 
