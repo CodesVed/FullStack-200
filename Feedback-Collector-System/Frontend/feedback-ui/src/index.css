@@ -1,0 +1,52 @@
+/* index.css - default styling */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background-color: #f7f7f7;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.feedback-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s;
+}
+
+.feedback-card p {
+  margin: 4px 0;
+}
+
+
+.category-badge {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
