@@ -6,9 +6,9 @@ Welcome! This repository contains full-stack Java projects that combine powerful
 
 ## 🚀 Projects Overview
 
-| Project Name              | Description                                | Timeline           | Tech Stack                              | Links                                         |
-|---------------------------|--------------------------------------------|--------------------|------------------------------------------|-----------------------------------------------|
-| Feedback Collector System | Collects and stores user feedback via a full-stack app with category filters | July 2025 (1 week)  | Java, Spring Boot, React (AI-generated)  | [Details](./Feedback-Collector-System/README.md) |
+| Project Name              | Description                                | Timeline           | Tech Stack                              |
+|---------------------------|--------------------------------------------|--------------------|------------------------------------------|
+| Feedback Collector System | Collects and stores user feedback via a full-stack app with category filters | July 2025 (1 week)  | Java, Spring Boot, React (AI-generated), H2 (in-memory)  |
 
 ---
 
