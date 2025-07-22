@@ -2,12 +2,6 @@
   "dependencies": {
     "axios": "^1.10.0"
   }
-  {
-  "scripts": {
-    "build": "vite build",
-    "dev": "vite",
-    "preview": "vite preview"
-  }
 }
 
 }
