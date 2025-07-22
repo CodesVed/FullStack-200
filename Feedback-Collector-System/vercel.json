@@ -1,5 +1,4 @@
 {
-  "projects": [
     {
       "src": "Frontend/feedback-ui",
       "use": "@vercel/static-build",
@@ -7,5 +6,4 @@
         "distDir": "dist"
       }
     }
-  ]
 }
