@@ -16,7 +16,7 @@ const FeedbackForm = ({ onFeedbackSubmitted }) => {
     };
 
     try {
-      const response = await fetch("http://localhost:8080/api/feedback/submit", {
+      const response = await fetch("https://feedback-collector-system.onrender.com/api/feedback/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

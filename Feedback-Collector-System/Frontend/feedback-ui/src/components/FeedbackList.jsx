@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./FeedbackList.css";
 
 const categoryColors = {
@@ -9,7 +9,35 @@ const categoryColors = {
   OTHER: "#9e9e9e",
 };
 
-const FeedbackList = ({ feedbacks, onDelete }) => {
+const FeedbackList = ({ feedbacks = [], onDelete }) => {
+  const [deletingId, setDeletingId] = useState(null);
+
+  const handleDelete = async (id) => {
+    if (deletingId !== null) {
+      console.log("Deletion already in progress for ID:", deletingId);
+      return;
+    }
+
+    console.log("Attempting delete for ID:", id);
+    setDeletingId(id);
+
+    try {
+      const confirmDelete = window.confirm("Are you sure you want to delete this feedback?");
+      if (!confirmDelete) {
+        console.log("User cancelled deletion");
+        setDeletingId(null);
+        return;
+      }
+
+      await onDelete(id);
+      console.log("Successfully deleted:", id);
+    } catch (err) {
+      console.error("Error deleting feedback:", err);
+    } finally {
+      setDeletingId(null);
+    }
+  };
+
   return (
     <div className="feedback-list">
       {feedbacks.length === 0 ? (
@@ -17,12 +45,16 @@ const FeedbackList = ({ feedbacks, onDelete }) => {
       ) : (
         feedbacks.map((fb) => (
           <div key={fb.id} className="feedback-card">
-            <span className="delete-button" onClick={() => onDelete(fb.id)}>
+            <button
+              className="delete-button"
+              onClick={() => handleDelete(fb.id)}
+              disabled={deletingId === fb.id}
+              style={{ background: "none", border: "none", cursor: "pointer" }}
+              title="Delete Feedback"
+            >
               ❌
-            </span>
-            <p>
-              <strong>Name:</strong> {fb.name}
-            </p>
+            </button>
+            <p><strong>Name:</strong> {fb.name}</p>
             <p>
               <strong>Category:</strong>{" "}
               <span
@@ -37,9 +69,7 @@ const FeedbackList = ({ feedbacks, onDelete }) => {
                 {fb.category}
               </span>
             </p>
-            <p>
-              <strong>Message:</strong> {fb.message}
-            </p>
+            <p><strong>Message:</strong> {fb.message}</p>
             <p style={{ fontSize: "0.85rem", color: "gray" }}>
               Submitted at: {fb.submittedAt}
             </p>

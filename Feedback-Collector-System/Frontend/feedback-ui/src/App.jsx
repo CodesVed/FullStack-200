@@ -11,8 +11,8 @@ function App() {
     try {
       const url =
         selectedCategory === "All"
-          ? "http://localhost:8080/api/feedback/view"
-          : `http://localhost:8080/api/feedback/view?category=${selectedCategory}`;
+          ? "https://feedback-collector-system.onrender.com/api/feedback/view"
+          : `https://feedback-collector-system.onrender.com/api/feedback/view?category=${selectedCategory}`;
       const response = await fetch(url);
       const data = await response.json();
       setFeedbacks(data);
@@ -34,7 +34,7 @@ function App() {
     if (!confirmDelete) return;
 
     try {
-      const response = await fetch(`http://localhost:8080/api/feedback/${id}`, {
+      const response = await fetch(`https://feedback-collector-system.onrender.com/api/feedback/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) throw new Error("Delete failed");
